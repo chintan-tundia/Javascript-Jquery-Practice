@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<script>
+function chng_color()
+{
+	tiger.align="right";
+}
+function chng_size()
+{
+	tiger.length="500";
+	tiger.width="500";
+	
+}
+function rechng_size()
+{
+	tiger.length="200";
+	tiger.width="200";
+}
+function chngpic(i)
+{
+	if(i==1)
+	{
+	smiley.src="anim.gif"
+	}
+	else
+	{
+	smiley.src="pic.gif"	
+	}
+}
+</script>
+<head>
+<title>Events</title>
+</head>
+
+<body>
+<b>Move mouse over the pic</b>
+<br />
+<img src="pic.gif"  name="smiley" width="200" onmouseover="chngpic(1)" onmouseout="chngpic(2)"/  >
+<br />
+<br />
+<b>Give a caption</b>
+<input type="text" name="txt1" size="40"  onfocus="chng_size()" onblur="rechng_size()" onselect="chng_color()">
+<br />
+<br />
+
+<img src="Wallpaper_-_Bengal_Tiger.jpg" name="tiger" border="1" length="200" width="200"/>
+</body>
+</html>
+ 

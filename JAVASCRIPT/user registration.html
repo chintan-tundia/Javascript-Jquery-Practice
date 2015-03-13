@@ -1,0 +1,504 @@
+<html>
+<head>
+<script type="text/javascript">
+gen = "Male"
+function updgen(par)
+{
+	gen = par;
+}
+function activate(par)
+{
+	if(par=="ssc")
+	{
+		if(frm_reg.chk1.checked==true)
+		{
+			
+			
+			frm_reg.txtsscyear.disabled=false;
+			frm_reg.txtsscboard.disabled=false;
+			frm_reg.txtsscperc.disabled=false;
+			frm_reg.txtsscyear.value="";
+			frm_reg.txtsscboard.value="";
+			frm_reg.txtsscperc.value="";
+			frm_reg.txtsscyear.focus();			
+		}
+		else
+		{
+            frm_reg.txtsscyear.value="N.A.";
+			frm_reg.txtsscboard.value="N.A.";
+			frm_reg.txtsscperc.value="N.A.";
+			frm_reg.txtsscyear.disabled=true;
+			frm_reg.txtsscboard.disabled=true;
+			frm_reg.txtsscperc.disabled=true;
+		}
+	}
+	if(par=="hsc")
+	{
+	
+		if(frm_reg.chk2.checked==true)
+		{
+			
+			frm_reg.txthscyear.disabled=false;
+			frm_reg.txthscboard.disabled=false;
+			frm_reg.txthscperc.disabled=false;
+			frm_reg.txthscyear.value="";
+			frm_reg.txthscboard.value="";
+			frm_reg.txthscperc.value="";
+			
+			frm_reg.txthscyear.focus();
+		}
+		else
+		{
+		    frm_reg.txthscyear.value="N.A.";
+			frm_reg.txthscboard.value="N.A.";
+			frm_reg.txthscperc.value="N.A.";
+		
+			frm_reg.txthscyear.disabled=true;
+			frm_reg.txthscboard.disabled=true;
+			frm_reg.txthscperc.disabled=true;
+		}
+	}
+	
+	if(par=="bcom")
+	{
+	
+		if(frm_reg.chk3.checked==true)
+		{
+			
+			frm_reg.txtbcomyear.disabled=false;
+			frm_reg.txtbcomboard.disabled=false;
+			frm_reg.txtbcomperc.disabled=false;
+			frm_reg.txtbcomyear.value="";
+			frm_reg.txtbcomboard.value="";
+			frm_reg.txtbcomperc.value="";
+			
+			frm_reg.txtbcomyear.focus();
+		}
+		else
+		{
+		    frm_reg.txtbcomyear.value="N.A.";
+			frm_reg.txtbcomboard.value="N.A.";
+			frm_reg.txtbcomperc.value="N.A.";
+		
+			frm_reg.txtbcomyear.disabled=true;
+			frm_reg.txtbcomboard.disabled=true;
+			frm_reg.txtbcomperc.disabled=true;
+		}
+	}
+	if(par=="mcom")
+	{
+	
+		if(frm_reg.chk4.checked==true)
+		{
+			
+			frm_reg.txtmcomyear.disabled=false;
+			frm_reg.txtmcomboard.disabled=false;
+			frm_reg.txtmcomperc.disabled=false;
+			frm_reg.txtmcomyear.value="";
+			frm_reg.txtmcomboard.value="";
+			frm_reg.txtmcomperc.value="";
+			
+			frm_reg.txtmcomyear.focus();
+		}
+		else
+		{
+		    frm_reg.txtmcomyear.value="N.A.";
+			frm_reg.txtmcomboard.value="N.A.";
+			frm_reg.txtmcomperc.value="N.A.";
+		
+			frm_reg.txtmcomyear.disabled=true;
+			frm_reg.txtmcomboard.disabled=true;
+			frm_reg.txtmcomperc.disabled=true;
+		}
+	}
+}
+ function clf()
+ {
+ 	
+	frm_reg.txtfname.value="FIRST NAME";
+	frm_reg.txtmname.value="MIDDLE NAME";
+	frm_reg.txtlname.value="LAST NAME";
+	
+	frm_reg.txtdate.value="00";
+	frm_reg.txtmonth.value="00";
+	frm_reg.txtyear.value="0000";
+	
+	frm_reg.radgen1.checked=false;
+	frm_reg.radgen2.checked=false;
+	
+	frm_reg.chk1.checked=false;
+	frm_reg.chk2.checked=false;
+	frm_reg.chk3.checked=false;
+	frm_reg.chk4.checked=false;
+	activate('ssc');
+	activate('hsc');
+	activate('bcom');
+	activate('mcom');
+	
+	frm_reg.chkmobile.checked=false;
+	frm_reg.chklandline.checked = false;
+	chklno();
+	chkmno();
+	
+    frm_reg.password1.value="password";
+    frm_reg.password2.value="password";
+    frm_reg.username.value="username";
+	
+	
+ } 
+ function chkmno()
+ {
+ 	if(frm_reg.chkmobile.checked==true)
+	{
+	   frm_reg.txtmobile.disabled=false;
+ 	   frm_reg.txtmobile.value="";
+ 	   frm_reg.txtmobile.focus();
+	}
+	else
+	{
+	   frm_reg.txtmobile.value="1234567891";
+	   frm_reg.txtmobile.disabled=true;
+	   
+ 	
+	}
+ }
+ function chklno()
+ {
+ 	if(frm_reg.chklandline.checked== true)
+	{
+		
+	  frm_reg.txtcode.disabled=false;	
+   	  frm_reg.txtcode.value="";
+ 	  frm_reg.txtlandline.disabled =false;
+ 	  frm_reg.txtlandline.value="";
+	  frm_reg.txtcode.focus();
+	}
+	else
+	{
+		frm_reg.txtcode.value="079"
+		frm_reg.txtlandline.value="12345678"
+		frm_reg.txtlandline.disabled = true;
+		frm_reg.txtcode.disabled = true;
+	}
+ }
+ 
+ function validate()
+ {
+ 
+ 	uname=frm_reg.username.value;
+	pwd1=frm_reg.password1.value;
+	pwd2=frm_reg.password2.value;
+	dt=frm_reg.txtdate.value;
+	mn=frm_reg.txtmonth.value;
+	yr=frm_reg.txtyear.value;
+    vgenm = frm_reg.radgen1;
+	vgenf = frm_reg.radgen2;
+	if(frm_reg.txtfname.value == "" )
+   {
+     alert( "Please provide your first name!" );
+     frm_reg.txtfname.focus() ;
+     return false;
+   }
+   if(frm_reg.txtmname.value == "" )
+   {
+     alert( "Please provide your middle name!" );
+     frm_reg.txtmname.focus() ;
+     return false;
+   }
+   if(frm_reg.txtlname.value == "" )
+   {
+     alert( "Please provide your last name!" );
+     frm_reg.txtlname.focus() ;
+     return false;
+   }
+   if(yr<1900 || yr>3000 || mn<1||mn>12 || dt<1 ||dt > 31)
+   {
+   		alert("Please enter date properly")
+		frm_reg.txtdate.value="";
+		frm_reg.txtmonth.value="";
+		frm_reg.txtyear.value="";
+		frm_reg.txtdate.focus()
+		return false;
+   }
+   if(vgenm.checked!=true && vgenf.checked!=true)
+   {
+   	alert("Select Gender");
+	return false;
+   }
+	if((uname.length<6)||(uname.length>10))
+	{
+		alert("username must be between 6-10 characters of length!")
+		frm_reg.username.value="";
+		frm_reg.username.focus();
+		return false;
+	}
+	if(pwd1.value=="")
+	{
+		alert("Please provide a password")
+		frm_reg.password1.focus();
+		return false;
+		
+	}
+	if(pwd1.length < 8 || pwd1.length>25)
+	{
+		alert("Password must be between 8-25 characters")
+		frm_reg.password1.value="";
+		frm_reg.password2.value="";
+		frm_reg.password1.focus();
+		return false;
+	}
+	if(pwd1.value!=pwd2.value)
+	{
+		alert("Passwords must match!")
+		frm_reg.password1.value="";
+		frm_reg.password2.value="";
+		frm_reg.password1.focus();
+		return false;
+	}
+	
+	alert("You have been successfully registered");
+	
+	
+
+	var varqual="-",vargen="Male";
+	var varmno=" -",varlno=" -";
+	if(frm_reg.chk1.checked==true)
+	{
+	           varqual=" SSC";
+	}
+	if(frm_reg.chk2.checked==true)
+	{
+	           varqual+=" , HSC";
+	}
+	if(frm_reg.chk3.checked==true)
+	{
+	           varqual+=" , B.Com";
+	}
+	if(frm_reg.chk4.checked==true)
+	{
+	           varqual+=" , M.Com";
+	}
+	
+
+	 
+	 if(frm_reg.chkmobile.checked==true)
+	{
+		varmno = frm_reg.txtmobile.value
+	}
+	if(frm_reg.chklandline.checked==true)
+	{
+		varlno = frm_reg.txtcode.value+" ";
+		varlno += frm_reg.txtlandline.value
+		
+	}
+    
+	document.write(" <h2>Details</h2><br><hr><br><br><b>NAME :: </b>" + 
+	frm_reg.txtlname.value + " . " + frm_reg.txtfname.value + " ."+ 
+	frm_reg.txtmname.value + "<br><b>DATE OF BIRTH :: </b>" + frm_reg.txtdate.value+ "/" + frm_reg.txtmonth.value+ "/" + frm_reg.txtyear.value );
+	document.write("<br><b>EDUCATIONAL QUALIFICATIONS ::</b>" + varqual)
+	document.write("<br><b>GENDER :: </b>" + gen + "<br><b>Mobile no.</b> ::" + varmno + "<br><b>Landline no.</b> ::" + varlno 
+	 +"<br><br><hr>")
+	
+
+	
+ }
+
+</script>
+
+<basefont color="#000000">
+<title>FORM</title></head>
+<body bgcolor="#FFFFFF"> 
+<center>
+  
+ <strong> <font size="+3">USER REGISTRATION </font></strong>
+ </center> 
+  
+  
+</div>
+<hr color="#333333">
+<br>
+<br>
+<br>
+<br>
+
+<form method="get" name="frm_reg">
+<table align="center" >
+<tr>
+<td  rowspan="3" valign="right">
+  <strong>Name</strong></td>
+
+<td>
+<input type="text" name="txtfname" value ="FIRST NAME" size = "30" maxlength="25" onFocus="frm_reg.txtfname.value=''";>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="txtmname" value ="MIDDLE NAME" size = "30" maxlength="25"onFocus="frm_reg.txtmname.value=''";>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="txtlname" value ="LAST NAME" size = "30" maxlength="25" onFocus="frm_reg.txtlname.value=''";>
+</td>
+</tr>
+<tr><td><pre> </pre></td></tr>
+<tr>
+
+<td><strong>Date Of Birth </strong> <em>(DD/MM/YYYY)</em></td>
+<td>
+<input type="text" name="txtdate" value="1" size="2" maxlength="2" onFocus="frm_reg.txtdate.value=''"; o>
+<input type="text" name="txtmonth" value="1" size="2" maxlength="2" onFocus="frm_reg.txtmonth.value=''";>
+<input type="text" name="txtyear" value="1991" size="4" maxlength="4" onFocus="frm_reg.txtyear.value=''";>
+</td>
+</tr>
+
+<tr><td><pre> </pre></td></tr>
+<tr>
+<td>
+  <strong>Gender  </strong></td>
+<td>
+<input type="radio" name="radiogen" id="radgen1" value="MALE">MALE
+<input type="radio" name="radiogen" id="radgen2"value="FEMALE" onClick="updgen('Female')">FEMALE
+</td>
+</tr>
+
+<tr><td><pre> </pre></td></tr>
+
+<tr>
+<td>
+  <strong>Educational Qualification </strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>
+      <table width="250">
+	  <tr>
+	  <td align="center"> Year</td>
+	  <td align="center">Board / University</td>
+	  <td align="center"> % </td>
+	  </tr> 
+      </table>
+
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="checkbox" name="chk1" value="SSC" onClick="activate('ssc')">SSC 
+</td>
+<td>
+<table>
+<tr>
+<td><input type="text" name="txtsscyear"  size="4" maxlength="4"  disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txtsscboard"  size ="20" maxlength="20" disabled="disabled"value="N.A."></td>
+<td><input type="text" name="txtsscperc" size="5" maxlength="5" disabled="disabled"value="N.A."></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="checkbox" name="chk2" value="HSC" onClick="activate('hsc')">HSC
+</td>
+<td>
+<table>
+<tr>
+<td><input type="text" name="txthscyear"  size="4" maxlength="4" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txthscboard"  size ="20" maxlength="20" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txthscperc" size="5" maxlength="5" disabled="disabled"value="N.A."></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="checkbox" name="chk3" value="GRAD" onClick="activate('bcom')">B.COM
+</td>
+<td>
+<table>
+<tr>
+<td><input type="text" name="txtbcomyear"  size="4" maxlength="4" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txtbcomboard"  size ="20" maxlength="20" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txtbcomperc" size="5" maxlength="5" disabled="disabled" value="N.A."></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+<input type="checkbox" name="chk4" value="P.GRAD" onClick="activate('mcom')">M.COM
+</td>
+<td>
+<table>
+<tr>
+<td><input type="text" name="txtmcomyear"  size="4" maxlength="4" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txtmcomboard"  size ="20" maxlength="20" disabled="disabled" value="N.A."></td>
+<td><input type="text" name="txtmcomperc" size="5" maxlength="5" disabled="disabled" value="N.A."></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr><td><pre> </pre></td></tr>
+<tr>
+<td><strong>Contact No.</strong></td>
+<td><input type="checkbox" name="chkmobile" value="residence" onClick="chkmno()"> Mobile no. <input type="text" name="txtmobile" disabled="disabled" size="10" maxlength="10" value="1234567891"></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="checkbox" name="chklandline" value="landline" onClick="chklno()"> Landline no. 
+<input type="text" name="txtcode" disabled="disabled" size="3" maxlength="3" value="079">
+<input type="text" name="txtlandline" disabled="disabled" size="8" maxlength="8" value="12345678"></td>
+</tr>
+<tr><td><pre> </pre></td></tr>
+<tr>
+<td>
+  <strong>Username  </strong></td>
+<td>
+<input type="text" name="username" value="username" size="25" maxlength="10" onFocus="frm_reg.username.value=''";>
+</td>
+<td>
+<em>
+Must be 6-10 characters long
+</em>
+</td>
+
+</tr>
+
+<tr>
+<td>
+  <strong>Password</strong></td>
+<td>
+<input type="password" name="password1" size="25" maxlength="25" value="password" onFocus="frm_reg.password1.value=''";>
+</td>
+<td><em>Must be 8-25 characters long</em></td>
+</tr>
+<tr>
+<td><strong>Confirm Password</strong></td>
+<td><input type="password" name="password2" size="25" maxlength="25" value="password" onFocus="frm_reg.password2.value=''";>
+</tr>
+
+</table>
+<br>
+<br>
+
+
+<table align="center">
+<tr align="center">
+<td>
+ <input type="button" name ="SUBMIT" value="SUBMIT" onClick="validate()">   
+ <input type="button" name ="RESET" value="RESET" onClick="clf()">
+</td>
+</tr>
+</table>
+</form>
+<hr color="#333333">
+</body>
+</html>
